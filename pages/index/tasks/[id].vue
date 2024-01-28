@@ -11,7 +11,13 @@ const task = computed(() => {
 })
 
 function deleteTask() {
-  toast.add({title:'caca'})
+  toast.add(
+    {
+      title: 'Suppression de la tâche',
+      description: `La tâche ${task.value.name} a été supprimée`,
+      icon: 'i-heroicons-trash',
+      color: "red"
+    })
   boardStore.deleteTask(route.params.id)
   router.push('/')
 }
